@@ -1,0 +1,24 @@
+body {
+    font-family: 'Caesar Dressing', cursive;
+    background-color: #6c756b;
+    background-image: url('../images/valhalla-fondo.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: #ff0039;
+}
+.miNavBar {
+    background-color: #6c756b80 !important;
+}
+ /* .miModal {
+    background-image: url('../images/cara-vikingo.jpg') !important 
+} */
+.miContainer {
+    /* background-color: #6c756b90 !important; */
+    background-image: url(../images/runa.png);
+    /* background-position: center; */
+     /* background-size: cover;  */
+}
+.miBoton {
+    color: #ff0039;
+}
