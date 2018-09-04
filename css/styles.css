@@ -19,6 +19,23 @@ body {
     /* background-position: center; */
      /* background-size: cover;  */
 }
-.miBoton {
+.miColor {
     color: #ff0039;
+}
+miBorde {
+    border-color: #ff0039;
+}
+.carousel-item img {
+    width: auto;
+  height: 400px;
+  max-height: 400px;
+}
+
+.my-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.containerBlanco {
+    background-image: url(../images/runas-blancas.png)
 }

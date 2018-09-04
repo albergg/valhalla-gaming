@@ -18,30 +18,30 @@
 
 
     <h3>registro</h3>
-    			<div class="container bg-dark  rounded shadow-lg miContainer">    			
+    			<div class="container  rounded shadow-lg ">    			
 				<div class="row justify-content-center">
 				<div class="col-12 col-md-6">
 					<form class="" method="get">
-						<div class="form-group bg-dark ">
-							<label><h4> Nombre Completo:</h4></label>
-							<input type="text" class="form-control" name="nombreUsuario" placeholder="Ingrese su nombre completo">
+						<div class="form-group bg-dark text-center">
+							<label ><h4> Nombre Completo:</h4></label>
+							<input type="text" class="form-control text-center" name="nombreUsuario" placeholder="Ingrese su nombre completo">
 						</div>
-						<div class="form-group bg-dark">
+						<div class="form-group bg-dark text-center">
 							<label><h4>Correo Electronico:</h4></label>
-							<input type="email" class="form-control" name="emailUsuario" placeholder="Ingrese su email">
+							<input type="email" class="form-control text-center" name="emailUsuario" placeholder="Ingrese su email">
 						</div>
 
-						<div class="form-group bg-dark">
+						<div class="form-group bg-dark text-center">
 								<label><b><h4>Contraseña:</h4></b></label>
-								<input type="password" name="password" class="form-control">
+								<input type="password" name="password" class="form-control text-center" placeholder="Ingrese la contraseña">
 						</div>
-						<div class="form-group bg-dark">
+						<div class="form-group bg-dark text-center">
 								<label><b><h4>Repita la contraseña:</h4></b></label>
-								<input type="password" name="rePassword" class="form-control">
+								<input type="password" name="rePassword" class="form-control text-center" placeholder="Repita la contraseña">
 						</div>
-						<div class="form-group bg-dark">
+						<div class="form-group bg-dark text-center">
 							<label><h4>Pais:</h4></label>
-							<select class="form-control" name="paisUsuario">
+							<select class="form-control text-center" name="paisUsuario" >
 								<option value="ar">Argentina</option>
 								<option value="ve">Venezuela</option>
 								<option value="co">Colombia</option>
@@ -66,7 +66,7 @@
 								<label class="form-check-label" for="gridCheck">
 								<label><h4>PC</h4></label>	
 							</div> -->
-						<button type="submit" class="btn btn-dark miBoton">Registrarse</button>
+						<button type="submit" class="btn btn-dark miColor"><h4>Registrarse</h4></button>
 					</form>
 				</div>
 			</div>

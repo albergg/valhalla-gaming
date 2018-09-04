@@ -1,6 +1,59 @@
 
-<h3>footer</h3>
 
+<body>
+    <!-- <div class="jumbotron jumbotron-fluid miNavBar">
+  <div class="container">
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <ul class= miFooter>
+      <li>Home</li> -->
+
+      <!-- Footer -->
+      <footer class="page-footer  special-color-dark pt-4 miNavBar">
+
+        <!-- Footer Elements -->
+        <div class="container">
+
+          <!-- Social buttons -->
+          <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+              <a class="btn-floating  mx-1">
+                <a href="www.facebook.com"></a>
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating mx-1">
+                <i class="fab fa-twitter-square"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating mx-1">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating mx-1">
+                <i class="fab fa-twitch"></i>
+              </a>
+            </li>
+          </ul>
+          <!-- Social buttons -->
+
+        </div>
+        <!-- Footer Elements -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright: Digital House : Alberto Gonzalez
+        </div>
+        <!-- Copyright -->
+
+      </footer>
+      <!-- Footer -->
+
+    </ul>
+      </div>
+    </div>
+</body>
 
 
 

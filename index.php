@@ -7,23 +7,35 @@
 <?php require_once 'partials/nav-bar.php' ?>
 
 <body>
-	<h1> hola vikingos del gaming</h1>
-		
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-	<ol class="carousel-indicators">
+	<h2> hola vikingos del gaming</h2>
+		<!-- carrousel de inicio -->
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
 		<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 		<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-	</ol>
-	<div class="carousel-inner">
-		<div class="carousel-item active">
-		<img class="d-block w-100" src=".../800x400?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+			<img class="d-block w-100" src="images/arena-gamer.jpg">
+			<div class="carousel-caption d-none d-md-block">
+				<a class="btn btn-dark miColor" href="#">Inscribete a los torneos</a>
+				<p>Fornite, LOL, CS:GO, Fifa, PES, etc</p>
+  			</div>
 		</div>
 		<div class="carousel-item">
-		<img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+			<img class="d-block w-100" src="images/csgo.png" alt="Second slide">
+			<div class="carousel-caption d-none d-md-block">
+				<a class="btn btn-dark btn-md miColor" href="#">Inscribete al torneo de CS:GO</a>
+				<p>...</p>
+  			</div>
 		</div>
-		<div class="carousel-item">
-		<img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+			<div class="carousel-item">
+			<img class="d-block w-100" src="images/lol-torneo.jpg" alt="Third slide">
+			<div class="carousel-caption d-none d-md-block">
+				<a class="btn btn-dark btn-lg miColor" href="#">Inscribite a la copa latinoamericana de LOL</a>
+				<p>...</p>
+  			</div>
 		</div>
 	</div>
 	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -35,11 +47,42 @@
 		<span class="sr-only">Next</span>
 	</a>
 	</div>
+	<!-- Seccion noticias -->
+	<h2>Noticias</h2>
+	<div class="card-deck">
+  	<div class="card">
+    	<img class="card-img-top" src="images/noticia1.jpg">
+    	<div class="card-body">
+      <h5 class="card-title">El FC Schalke 04 jugará la final de Madrid tras vencer a Vitality</h5>
+      <p class="card-text">El club alemán logra llegar a su primera final desde que entró en League of Legends</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Actualizado hace 2 dias</small>
+    </div>
+  </div>
+  <div class="card">
+    	<img class="card-img-top" src="images/star-wars-noticia.jpg" alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Sigue en directo la presentación de las Nvidia RTX 2080 en Gamescom</h5>
+				<p class="card-text">Nvidia presentó hace poco sus nuevas gráficas preparadas para el raytracing </p>
+			</div>
+    <div class="card-footer">
+      <small class="text-muted">Actualizado hace 7 dias</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="images/fortnite-noticia.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">El rifle de precisión y nuevos modos de juego llegan a Fortnite 5.21</h5>
+      <p class="card-text">Se trata del fusil de precisión pesado, un arma que permite atravesar paredes y que hace muchísimo daño contra enemigos y estructuras. De hecho, hace un daño de 150/157 a rivales y unos 1.050/1.100 a edificios. Además, a Salvar el Mundo llega Thora junto a los desafíos semanales </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Actualizado hace 12 dias</small>
+    </div>
+  </div>
+</div>
 
-	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, dolorum suscipit magnam eius soluta quod iste. Deserunt animi labore distinctio, laboriosam tenetur deleniti facere mollitia ea, blanditiis soluta, dolores illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ea veritatis laudantium, accusamus quo blanditiis unde doloremque iste voluptas nisi excepturi repellat reiciendis amet. Vitae impedit laborum distinctio at et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae earum et consequuntur ut quibusdam aut impedit distinctio, magni qui. Molestiae ipsum ullam laborum recusandae inventore voluptatibus, suscipit quia enim non! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione magni necessitatibus debitis corrupti. Repellendus inventore dolor sit quisquam. Veniam voluptas fugit id perferendis consequuntur minima doloribus porro animi quod nisi? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse aspernatur perspiciatis animi pariatur in libero, voluptatem deleniti cupiditate sint qui nostrum atque, doloribus reprehenderit velit nam molestiae. Labore, fugit ipsum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsum doloremque blanditiis nostrum voluptatem deserunt quidem optio, maxime et in incidunt, consectetur iste accusamus sequi! Repudiandae tenetur quas libero quia. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis consequuntur saepe quidem, atque ducimus aperiam est voluptas, sapiente at cupiditate explicabo cum, sint iste maxime facere minima animi harum asperiores.
 
-	<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolores adipisci delectus qui quia, explicabo necessitatibus voluptas numquam est deleniti, nisi fugiat doloribus obcaecati tenetur rerum quasi doloremque. Exercitationem, praesentium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, qui sequi alias, doloribus deleniti eligendi dolorum aperiam natus laborum amet veritatis facere provident inventore, nihil exercitationem maiores fugiat aliquam asperiores? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nobis id reiciendis vitae recusandae, molestias harum magni dignissimos voluptate optio, necessitatibus suscipit facilis omnis? Suscipit quia omnis sequi dolore saepe! Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dolores autem inventore sapiente totam magni sed. Voluptates quasi consequuntur dolorem adipisci quia, assumenda nostrum officiis culpa cum porro commodi deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eligendi omnis consectetur vitae! Voluptatum quas similique, incidunt debitis maiores ad ipsa maxime voluptate aliquid suscipit blanditiis vel mollitia explicabo repudiandae?</h2>
-	</p>
 	<!-- inclusion del footer  -->
 	<?php  require_once 'partials/footer.php'?>
 </body>
