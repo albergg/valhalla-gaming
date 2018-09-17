@@ -43,7 +43,7 @@
         <!-- Footer Elements -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright: Digital House : Alberto Gonzalez
+        <div class="footer-copyright text-center py-3">© 2018 Copyright: Digital House - Alberto Gonzalez
         </div>
         <!-- Copyright -->
 

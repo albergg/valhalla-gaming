@@ -18,29 +18,33 @@
 
 
     <h3>registro</h3>
-    			<div class="container  rounded shadow-lg ">    			
+    			<div class="container ">    			
 				<div class="row justify-content-center">
 				<div class="col-12 col-md-6">
 					<form class="" method="get">
-						<div class="form-group bg-dark text-center">
-							<label ><h4> Nombre Completo:</h4></label>
+						<div class="form-group bg-dark rounded rounded text-center ">
+							<label ><h4> Nombre Completo</h4></label>
 							<input type="text" class="form-control text-center" name="nombreUsuario" placeholder="Ingrese su nombre completo">
 						</div>
-						<div class="form-group bg-dark text-center">
-							<label><h4>Correo Electronico:</h4></label>
+						<div class="form-group bg-dark rounded text-center ">
+							<label><h4>Correo Electronico</h4></label>
 							<input type="email" class="form-control text-center" name="emailUsuario" placeholder="Ingrese su email">
 						</div>
+						<div class="form-group bg-dark rounded text-center ">
+							<label><h4>Nombre de Usuario</h4></label>
+							<input type="text" class="form-control text-center" name="emailUsuario" placeholder="Ingrese su usuario">
+						</div>
 
-						<div class="form-group bg-dark text-center">
-								<label><b><h4>Contraseña:</h4></b></label>
+						<div class="form-group bg-dark rounded text-center ">
+								<label><b><h4>Contraseña</h4></b></label>
 								<input type="password" name="password" class="form-control text-center" placeholder="Ingrese la contraseña">
 						</div>
-						<div class="form-group bg-dark text-center">
-								<label><b><h4>Repita la contraseña:</h4></b></label>
+						<div class="form-group bg-dark rounded text-center ">
+								<label><b><h4>Repita la contraseña</h4></b></label>
 								<input type="password" name="rePassword" class="form-control text-center" placeholder="Repita la contraseña">
 						</div>
-						<div class="form-group bg-dark text-center">
-							<label><h4>Pais:</h4></label>
+						<div class="form-group bg-dark rounded text-center ">
+							<label><h4>Pais</h4></label>
 							<select class="form-control text-center" name="paisUsuario" >
 								<option value="ar">Argentina</option>
 								<option value="ve">Venezuela</option>
@@ -51,22 +55,7 @@
 							</select>
 						</div>
 						<div class="form-group">
-
-
-							<!-- <div class="form-check"><h4>Plataforma:</h4>
-								<input class="form-check-input" type="checkbox" id="CheckPs4">
-								<label class="form-check-label" for="CheckPs4">
-								<label><h4>Playstation 4</h4></label>	
-								<br>
-								<input class="form-check-input" type="checkbox" id="CheckXboxOne">
-								<label class="form-check-label" for="gridCheck">
-								<label><h4>Xbox One</h4></label>	
-								<br>
-								<input class="form-check-input" type="checkbox" id="CheckPc">
-								<label class="form-check-label" for="gridCheck">
-								<label><h4>PC</h4></label>	
-							</div> -->
-						<button type="submit" class="btn btn-dark miColor"><h4>Registrarse</h4></button>
+						<button type="submit" class="btn btn-dark miBoton  justify-content-center"><h4>Registrarse</h4></button>
 					</form>
 				</div>
 			</div>

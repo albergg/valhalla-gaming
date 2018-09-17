@@ -9,7 +9,7 @@
   <div class="card text-white bg-dark containerBlanco">
     <div class="card-header " id="headingOne">
       <h5 class="mb-0">
-        <button class="btn btn-dark miColor" type="button" data-toggle="collapse" data-target="#collapseOne">
+        <button class="btn btn-dark miBoton " type="button" data-toggle="collapse" data-target="#collapseOne">
           Quienes Somos
         </button>
       </h5>
@@ -24,7 +24,7 @@
   <div class="card text-white containerBlanco">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
-        <button class="btn btn-dark miColor" type="button" data-toggle="collapse" data-target="#collapseTwo">
+        <button class="btn btn-dark miBoton " type="button" data-toggle="collapse" data-target="#collapseTwo">
           Que Hacemos
         </button>
       </h5>
@@ -38,7 +38,7 @@
   <div class="card text-white containerBlanco">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
-        <button class="btn btn-dark miColor" type="button" data-toggle="collapse" data-target="#collapseThree">
+        <button class="btn btn-dark miBoton " type="button" data-toggle="collapse" data-target="#collapseThree">
           Como Inscribirse
         </button>
       </h5>
