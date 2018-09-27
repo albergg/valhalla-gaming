@@ -33,8 +33,7 @@
     <div class="modal-content miContainer">
       <div class="modal-header ">
         <h5 class="modal-title bg-dark" id="modalIniciarSesionTitle">Bienvenido Vikingo!</h5>
-        <button type="button" class="close miBoton " data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close miBoton " data-dismiss="modal">
         </button>
       </div>
       <div class="modal-body">
@@ -42,12 +41,12 @@
 			<div class="row justify-content-center">
 				<div class="col-12 col-md-6">
 					<form class="" method="post">
-						<div class="form-group bg-dark text-center">
-							<label>Correo Electronico:</label>
+						<div class="form-group rounded bg-dark text-center">
+							<label>Correo Electronico</label>
 							<input type="email" class="form-control text-center" name="usuarioEmail" placeholder="Ingresa Email">
 						</div>
-						<div class="form-group bg-dark text-center">
-							<label>Contraseña:</label>
+						<div class="form-group rounded bg-dark text-center">
+							<label>Contraseña</label>
 							<input type="email" class="form-control text-center" name="usuarioPassword" placeholder="Ingresa Contraseña">
             </div>
             <!-- <a class="btn btn btn-dark miBoton " href="perfil.php" role="button">Ingresa al Valhalla!</a> -->

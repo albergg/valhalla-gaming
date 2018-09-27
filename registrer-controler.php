@@ -1,0 +1,7 @@
+<?php 
+
+// validar el registro
+
+
+
+?>

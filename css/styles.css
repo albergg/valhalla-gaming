@@ -5,21 +5,20 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    color: #ffffff;
+    /* color: #ffffff; */
+    color: #ff0039;
 }
 .miNavBar {
     background-color: #6c756b80 !important;
 }
 
 .miContainer {
-    /* background-color: #6c756b90 !important; */
-    background-image: url(../images/valhalla-fondo.jpg);
+    background-color: #6c756b95 !important;
+    /* background-image: url(../images/valhalla-fondo.jpg); */
     /* background-position: center; */
-    background-size: cover;
+    /* background-size: cover; */
 }
-.miBoton {
-    color: white;
-}
+
 .miBorde{
     border-color: #ff0039 !important;
 }
