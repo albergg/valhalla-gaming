@@ -1,3 +1,4 @@
+<?php require_once 'registrer-controls.php'?>
 <?php $tituloPagina = 'Registro | Valhalla Gaming'; ?>
 <?php require_once 'partials/head.php'?>
 <?php require_once 'partials/nav-bar.php'?>
@@ -20,15 +21,19 @@
 	$userNameLogin = isset($_POST['userLogin']) ? trim($_POST['userLogin']) : '';
 	$userCountry = isset($_POST['userCountry']) ? trim($_POST['userCountry']) : '';
 	
-	?>
+	$errors = [];
 
-	<?php 
-		var_dump($userFullName .$userEmail . $userNameLogin . $userCountry);
-	?>
-	
- <!-- <?= $userFullName .$userEmail . $userNameLogin . $userCountry;?>  -->
-	
-	
+	if ($_POST) {
+		$errors = registrerValidate($_POST);
+	}
+
+
+	//debug
+		echo 
+		var_dump($userFullName . "<br>" . $userEmail . "<br>". $userNameLogin . "<br>". $userCountry);
+		var_dump($errors);
+?>
+		
 
     <h3>registro</h3>
     			<div class="container ">    			
@@ -37,7 +42,12 @@
 							<form method="post" enctype="multipart/form-data">
 								<div class="form-group bg-dark rounded text-center ">
 									<label> Nombre Completo</label>
-									<input type="text" class="form-control text-center" name="userName" placeholder="Ingrese su nombre completo" value="<?= $userFullName; ?>">
+									<input type="text" class="form-control  text-center <?= isset($errors['fullName']) ? 'is-invalid' : ''; ?>" name="userName" placeholder="Ingrese su nombre completo" value="<?= $userFullName; ?>">
+									<?php if (isset($errors['fullName'])): ?>
+									<div class="alert alert-danger">
+										<?= $errors['fullName'] ?>
+									</div>
+								<?php endif; ?>
 								</div>
 								<div class="form-group bg-dark rounded text-center ">
 									<label>Correo Electronico</label>
@@ -62,6 +72,7 @@
 										"">Selecciona un pais</option>
 										<?php foreach ($countries as $code=>$country): ?>
 										<option 
+											<?= $code == $userCountry ? 'selected' : '' ?>
 										value="<?= $code ?>"><?=$country ?></option>
 										<?php endforeach; ?>
 									</select>

@@ -22,10 +22,9 @@
   </div>
 <?php 
   	// Persitencia de datos //
-	$userFullName = isset($_POST['userName']) ? trim($_POST['userName']) : '';
-	$userEmail = isset($_POST['userEmail']) ? trim($_POST['userEmail']) : '';
-	$userNameLogin = isset($_POST['userLogin']) ? trim($_POST['userLogin']) : '';
-	$userCountry = isset($_POST['userCountry']) ? trim($_POST['userCountry']) : '';
+	$userEmailLogin = isset($_POST['userEmailLogin']) ? trim($_POST['userEmailLogin']) : '';
+	$userPasswordLogin = isset($_POST['userPasswordLogin']) ? trim($_POST['userPasswordLogin']) : '';
+
 	
 	?>
     <a class="btn btn-dark miBoton " href="registro.php" role="button">Registrarse</a>
@@ -39,7 +38,7 @@
 <div class="modal fade" id="modalIniciarSesion" tabindex="-1" role="dialog" miModal>
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content miContainer">
-      <div class="modal-header ">
+      <div class="modal-header">
         <h5 class="modal-title bg-dark" id="modalIniciarSesionTitle">Bienvenido Vikingo!</h5>
         <button type="button" class="close miBoton " data-dismiss="modal">
         </button>
@@ -51,11 +50,11 @@
 					<form class="" method="post">
 						<div class="form-group rounded bg-dark text-center">
 							<label>Correo Electronico</label>
-							<input type="email" class="form-control text-center" name="usuarioEmail" placeholder="Ingresa Email">
+							<input type="email" class="form-control text-center" name="userEmailLogin" placeholder="Ingresa Email">
 						</div>
 						<div class="form-group rounded bg-dark text-center">
 							<label>Contraseña</label>
-							<input type="email" class="form-control text-center" name="usuarioPassword" placeholder="Ingresa Contraseña">
+							<input type="password" class="form-control text-center" name="userPasswordLogin" placeholder="Ingresa Contraseña">
             </div>
             <!-- <a class="btn btn btn-dark miBoton " href="perfil.php" role="button">Ingresa al Valhalla!</a> -->
 						<!-- <button type="submit" class="btn btn-dark miBoton ">Ingresa al Valhalla!</button> -->
@@ -65,8 +64,8 @@
 		</div>
       </div>
       <div class="modal-footer">
-        <a class="btn btn btn-dark miBoton " href="perfil.php" role="button">Ingresa al Valhalla!</a>
-        <!-- <button type="submit" class="btn btn-dark miBoton " data-dismiss="modal">Ingresa al Valhalla!</button>       -->
+        <!-- <a class="btn btn btn-dark miBoton " href="perfil.php" role="button">Ingresa al Valhalla!</a> -->
+        <button type="submit" class="btn btn-dark miBoton " data-dismiss="modal">Ingresa al Valhalla!</button>      
       </div>
     </div>
   </div>

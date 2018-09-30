@@ -12,5 +12,3 @@
     <title> <?= isset($tituloPagina) ? $tituloPagina :'Valhalla Gaming'; ?> </title>
 </head>
 <body>
-    
-</html>
