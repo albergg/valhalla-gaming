@@ -6,7 +6,7 @@
 <!-- inclusion de navbar -->
 <?php require_once 'partials/nav-bar.php' ?>
 
-<body>
+
 	<h2> Bienvenidos vikingos del gaming</h2>
 		<!-- carrousel de inicio -->
 	<div id="carouselPrincipal" class="carousel slide" data-ride="carousel">
@@ -85,4 +85,3 @@
 
 	<!-- inclusion del footer  -->
 	<?php  require_once 'partials/footer.php'?>
-</body>

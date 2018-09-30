@@ -20,6 +20,14 @@
       </li>
     </ul>
   </div>
+<?php 
+  	// Persitencia de datos //
+	$userFullName = isset($_POST['userName']) ? trim($_POST['userName']) : '';
+	$userEmail = isset($_POST['userEmail']) ? trim($_POST['userEmail']) : '';
+	$userNameLogin = isset($_POST['userLogin']) ? trim($_POST['userLogin']) : '';
+	$userCountry = isset($_POST['userCountry']) ? trim($_POST['userCountry']) : '';
+	
+	?>
     <a class="btn btn-dark miBoton " href="registro.php" role="button">Registrarse</a>
 
 <button type="button" class="btn btn-dark miBoton " data-toggle="modal" data-target="#modalIniciarSesion">

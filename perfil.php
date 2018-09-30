@@ -2,7 +2,7 @@
 <?php require_once 'partials/head.php'?>
 <?php require_once 'partials/nav-bar.php'?>
 
-<body>
+
     <h3>Perfil de usuario</h3>
     <!-- imagen de perfil con datos del usuario -->
     <div class="card mx-auto" style="width: 18rem;">
@@ -35,4 +35,3 @@
 </div>
 
 <?php require_once 'partials/footer.php' ?>
-</body>

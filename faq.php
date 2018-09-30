@@ -3,7 +3,6 @@
 <?php require_once 'partials/nav-bar.php'?>
 
 
-<body>
     <h3>Preguntas Frecuentes</h3>
     <div class="accordion" id="acordeonPreguntas">
   <div class="card text-white bg-dark containerBlanco">
@@ -51,4 +50,3 @@
   </div>
 </div>
 <?php require_once 'partials/footer.php' ?>
-</body>

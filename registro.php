@@ -21,27 +21,30 @@
 	$userCountry = isset($_POST['userCountry']) ? trim($_POST['userCountry']) : '';
 	
 	?>
-<body>
+
+	<?php 
+		var_dump($userFullName .$userEmail . $userNameLogin . $userCountry);
+	?>
 	
-<?= $userFullName .$userEmail . $userNameLogin . $userCountry;?>
+ <!-- <?= $userFullName .$userEmail . $userNameLogin . $userCountry;?>  -->
 	
 	
 
     <h3>registro</h3>
     			<div class="container ">    			
 					<div class="row justify-content-center">
-						<div class="col-12 col-md-6">
+						<div class="col-12 col-md-8">
 							<form method="post" enctype="multipart/form-data">
 								<div class="form-group bg-dark rounded text-center ">
-									<label ><label> Nombre Completo</label></label>
+									<label> Nombre Completo</label>
 									<input type="text" class="form-control text-center" name="userName" placeholder="Ingrese su nombre completo" value="<?= $userFullName; ?>">
 								</div>
 								<div class="form-group bg-dark rounded text-center ">
-									<label><label>Correo Electronico</label></label>
+									<label>Correo Electronico</label>
 									<input type="email" class="form-control text-center" name="userEmail" placeholder="Ingrese su email" value="<?= $userEmail; ?>">
 								</div>
 								<div class="form-group bg-dark rounded text-center ">
-									<label><label>Nombre de Usuario</label></label>
+									<label>Nombre de Usuario</label>
 									<input type="text" class="form-control text-center" name="userLogin" placeholder="Ingrese su usuario" value="<?= $userNameLogin; ?>">
 								</div>
 								<div class="form-group bg-dark rounded text-center ">
@@ -64,7 +67,7 @@
 									</select>
 								</div>
 							<div class="form-group bg-dark rounded text-center">
-								<label><label>Imagen de perfil</label></label>
+								<label>Imagen de perfil</label>
 								<div class="custom-file">
 									<input type="file" class="custom-file-input" name="userAvatar">
 									<label class="custom-file-label">Selecciona una imagen</label>
@@ -81,4 +84,3 @@
 
 
 <?php require_once 'partials/footer.php' ?>
-</body>
