@@ -1,3 +1,4 @@
+<?php require_once 'registrer-controls.php'?>
 <nav class="navbar sticky-top  navbar-expand-lg navbar-dark bg-dark miNavBar">
   <a class="navbar-brand" href="index.php"><img src="images/valhalla-logo.png" style= "width: 80px;"></a>
   <button class="navbar-toggler bg-dark miBorde" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -25,13 +26,19 @@
 	$userEmailLogin = isset($_POST['userEmailLogin']) ? trim($_POST['userEmailLogin']) : '';
 	$userPasswordLogin = isset($_POST['userPasswordLogin']) ? trim($_POST['userPasswordLogin']) : '';
 
-	
+  $errors = [];
+// se comenta ya que el modal no esta validando los datos.
+	// if ($_POST) {
+	// 	$errors = validateLoginForm($_POST);
+	// }
 	?>
     <a class="btn btn-dark miBoton " href="registro.php" role="button">Registrarse</a>
 
-<button type="button" class="btn btn-dark miBoton " data-toggle="modal" data-target="#modalIniciarSesion">
+  <!-- // se comenta ya que el modal no esta validando los datos. -->
+<!-- <button type="button" class="btn btn-dark miBoton " data-toggle="modal" data-target="#modalIniciarSesion">
   Iniciar Sesion
-</button>
+</button> -->
+    <a class="btn btn-dark miBoton " href="login.php" role="button">Iniciar Sesion</a>
 </nav>
 
 <!-- Modal iniciar sesion-->
@@ -50,7 +57,7 @@
 					<form class="" method="post">
 						<div class="form-group rounded bg-dark text-center">
 							<label>Correo Electronico</label>
-							<input type="email" class="form-control text-center" name="userEmailLogin" placeholder="Ingresa Email">
+							<input type="email" class="form-control text-center" name="userEmailLogin" placeholder="Ingresa Email" <?= isset($errors['email']) ? 'is-invalid' : ''; ?>value="<?= $userEmailLogin; ?>">
 						</div>
 						<div class="form-group rounded bg-dark text-center">
 							<label>Contraseña</label>

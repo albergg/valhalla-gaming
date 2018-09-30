@@ -18,13 +18,13 @@
 	// Persitencia de datos //
 	$userFullName = isset($_POST['userName']) ? trim($_POST['userName']) : '';
 	$userEmail = isset($_POST['userEmail']) ? trim($_POST['userEmail']) : '';
-	$userNameLogin = isset($_POST['userLogin']) ? trim($_POST['userLogin']) : '';
+	$userNameLogin = isset($_POST['username']) ? trim($_POST['username']) : '';
 	$userCountry = isset($_POST['userCountry']) ? trim($_POST['userCountry']) : '';
 	
 	$errors = [];
 
 	if ($_POST) {
-		$errors = registrerValidate($_POST);
+		$errors = validateRegistrerForm($_POST);
 	}
 
 
@@ -51,19 +51,39 @@
 								</div>
 								<div class="form-group bg-dark rounded text-center ">
 									<label>Correo Electronico</label>
-									<input type="email" class="form-control text-center" name="userEmail" placeholder="Ingrese su email" value="<?= $userEmail; ?>">
+									<input type="email" class="form-control text-center" name="userEmail" placeholder="Ingrese su email" <?= isset($errors['email']) ? 'is-invalid' : ''; ?>value="<?= $userEmail; ?>">
+									<?php if (isset($errors['email'])): ?>
+									<div class="alert alert-danger">
+										<?= $errors['email'] ?>
+									</div>
+								<?php endif; ?>
 								</div>
 								<div class="form-group bg-dark rounded text-center ">
 									<label>Nombre de Usuario</label>
-									<input type="text" class="form-control text-center" name="userLogin" placeholder="Ingrese su usuario" value="<?= $userNameLogin; ?>">
+									<input type="text" name="username" class="form-control text-center <?= isset($errors['username']) ? 'is-invalid' : ''; ?>"  placeholder="Ingrese su usuario" value="<?= $userNameLogin; ?>">
+									<?php if (isset($errors['username'])): ?>
+									<div class="alert alert-danger">
+										<?= $errors['username'] ?>
+									</div>
+								<?php endif; ?>
 								</div>
 								<div class="form-group bg-dark rounded text-center ">
 										<label>Contraseña</label>
-										<input type="password" name="userPassword" class="form-control text-center" placeholder="Ingrese la contraseña">
+										<input type="password" name="userPassword" class="form-control text-center <?= isset($errors['password']) ? 'is-invalid' : ''; ?>" placeholder="Ingrese la contraseña" >
+										<?php if (isset($errors['password'])): ?>
+									<div class="alert alert-danger">
+										<?= $errors['password'] ?>
+									</div>
+								<?php endif; ?>
 								</div>
 								<div class="form-group bg-dark rounded text-center ">
 										<label>Repita la contraseña</label>
-										<input type="password" name="userRepeatPassword" class="form-control text-center" placeholder="Repita la contraseña">
+										<input type="password" name="userRepeatPassword" class="form-control text-center <?= isset($errors['password']) ? 'is-invalid' : ''; ?>" placeholder="Repita la contraseña">
+										<?php if (isset($errors['password'])): ?>
+									<div class="alert alert-danger">
+										<?= $errors['password'] ?>
+									</div>
+								<?php endif; ?>
 								</div>
 								<div class="form-group bg-dark rounded text-center ">
 									<label>Pais</label>
@@ -76,6 +96,11 @@
 										value="<?= $code ?>"><?=$country ?></option>
 										<?php endforeach; ?>
 									</select>
+									<?php if (isset($errors['country'])): ?>
+									<div class="alert alert-danger">
+										<?= $errors['country'] ?>
+									</div>
+								<?php endif; ?>
 								</div>
 							<div class="form-group bg-dark rounded text-center">
 								<label>Imagen de perfil</label>
@@ -86,7 +111,7 @@
 								</div>
 							</div>
 						<div class="form-group">
-						<button type="submit" class="btn btn-dark miBoton  justify-content-center"><label>Registrarse</label></button>
+						<button type="submit" class="btn btn-dark miBoton  justify-content-center">Registrarse</button>
 					</form>
 				</div>
 			</div>
