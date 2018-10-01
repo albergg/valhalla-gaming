@@ -110,4 +110,17 @@ function validateLoginForm($formData) {
 
 		return $lastUser['id'] + 1;
 	}
+	
+	// función traer al usuario por email
+	function fetchByEmail($email) {
+		$allUsers = fetchAll();
+
+		foreach ($allUsers as $oneUser) {
+			if ($oneUser['email'] === $email) {
+				return $oneUser;
+			}
+		}
+
+		return false;
+	}
 ?>
