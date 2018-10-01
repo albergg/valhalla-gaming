@@ -25,6 +25,13 @@
 
 	if ($_POST) {
 		$errors = validateRegistrerForm($_POST);
+		if ( count($errors) == 0 ) {
+
+			
+			$user = saveUser($_POST);
+
+		}
+		
 	}
 
 
@@ -67,7 +74,7 @@
 									</div>
 								<?php endif; ?>
 								</div>
-								<div class="form-group bg-dark rounded text-center ">
+								<div class="form-group bg-dark rounded text-center" data-toggle="tooltip" data-placement="top" title="La contraseña debe tener minimo de 4 caracteres">
 										<label>Contraseña</label>
 										<input type="password" name="userPassword" class="form-control text-center <?= isset($errors['password']) ? 'is-invalid' : ''; ?>" placeholder="Ingrese la contraseña" >
 										<?php if (isset($errors['password'])): ?>
@@ -76,7 +83,7 @@
 									</div>
 								<?php endif; ?>
 								</div>
-								<div class="form-group bg-dark rounded text-center ">
+								<div class="form-group bg-dark rounded text-center"  data-toggle="tooltip" data-placement="top" title="La contraseña debe tener minimo de 4 caracteres">
 										<label>Repita la contraseña</label>
 										<input type="password" name="userRepeatPassword" class="form-control text-center <?= isset($errors['password']) ? 'is-invalid' : ''; ?>" placeholder="Repita la contraseña">
 										<?php if (isset($errors['password'])): ?>
@@ -111,7 +118,8 @@
 								</div>
 							</div>
 						<div class="form-group">
-						<button type="submit" class="btn btn-dark miBoton  justify-content-center">Registrarse</button>
+						<section class="row">
+						<button type="submit" class="btn btn-lg btn-dark miBoton  justify-content-center mx-auto">Registrarse</button>
 					</form>
 				</div>
 			</div>

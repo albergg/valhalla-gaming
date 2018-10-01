@@ -36,10 +36,10 @@
 							<form method="post" enctype="multipart/form-data">
 								<div class="form-group bg-dark rounded text-center ">
                                     <label>Correo Electronico</label>
-									<input type="email" class="form-control text-center" name="userEmailLogin" placeholder="Ingrese su email" <?= isset($errors['email']) ? 'is-invalid' : ''; ?>value="<?= $userEmailLogin; ?>">
-									<?php if (isset($errors['email'])): ?>
+									<input type="email" class="form-control text-center" name="userEmailLogin" placeholder="Ingrese su email" <?= isset($errors['userEmailLogin']) ? 'is-invalid' : ''; ?>value="<?= $userEmailLogin; ?>">
+									<?php if (isset($errors['userEmailLogin'])): ?>
 									<div class="alert alert-danger">
-										<?= $errors['email'] ?>
+										<?= $errors['userEmailLogin'] ?>
 									</div>
 								<?php endif; ?>
 								</div>
@@ -60,6 +60,7 @@
 						<!-- <button type="submit" class="btn btn-dark miBoton ">Ingresa al Valhalla!</button> -->
                         <section class="row">
                         <button type="submit" class="btn btn-dark miBoton mx-auto">Ingresa al Valhalla!</button>   
+                        </section>
 					</form>
 				</div>
 			</div>
@@ -68,7 +69,7 @@
       <!-- <div class="modal-footer"> -->
         <!-- <a class="btn btn btn-dark miBoton " href="perfil.php" role="button">Ingresa al Valhalla!</a> -->
         <!-- <button type="submit" class="btn btn-dark miBoton " data-dismiss="modal">Ingresa al Valhalla!</button>       -->
-        </section>
+        <!-- </section> -->
       </div>
     </div>
   </div>

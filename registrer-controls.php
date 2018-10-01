@@ -34,7 +34,7 @@ function validateRegistrerForm($formData) {
 		} elseif ( $password != $repeatPassword) {
 			$errors['password'] = 'Las contraseñas no coinciden';
 		} elseif ( strlen($password) < 4 || strlen($repeatPassword) < 4 ) {
-			$errors['password'] = 'La contraseña debe tener más de 4 caracteres';
+			$errors['password'] = 'La contraseña debe tener minimo 4 caracteres';
 		}
 // validacion de pais
     if ( empty($country) ) {
@@ -58,6 +58,56 @@ function validateLoginForm($formData) {
 		}
     return $errors;
 }
+// Función Crear Usuarios
+	function newUser($data){
+		$user = [
+			'id' => getNextId(),
+			'name' => $data['userName'],
+			'email' => $data['userEmail'],
+			'password' => password_hash($data['userPassword'], PASSWORD_DEFAULT),
+			'country' => $data['userCountry'],
+			// 'avatar' => $data['avatar'],
+		];
 
+		return $user;
+	}
+// Función Guardar Usuario
+	function saveUser($data){
+		$finalUser = newUser($data);
 
+		$userInJsonFormat = json_encode($finalUser);
+
+		file_put_contents('data/users.json', $userInJsonFormat . PHP_EOL, FILE_APPEND);
+
+		return $finalUser;
+    }
+    
+    // Función traer todos los Usuarios
+	function fetchAll() {
+		$allUsersString = file_get_contents('data/users.json');
+
+		$usersInArray = explode(PHP_EOL, $allUsersString);
+		array_pop($usersInArray);
+
+		$finalUsersArray = [];
+
+		foreach ($usersInArray as $oneUser) {
+			$finalUsersArray[] = json_decode($oneUser, true);
+		}
+
+		return $finalUsersArray;
+    }
+    
+    // Función Generar ID
+	function getNextId(){
+		$allUsers = fetchAll();
+
+		if( count($allUsers) == 0 ) {
+			return 1;
+		}
+
+		$lastUser = array_pop($allUsers);
+
+		return $lastUser['id'] + 1;
+	}
 ?>
