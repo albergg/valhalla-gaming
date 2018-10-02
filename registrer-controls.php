@@ -1,8 +1,9 @@
 <?php 
+require_once 'config.php';
 
 // funciones de validacion de formularios
 
-function validateRegistrerForm($formData) {
+function validateRegistrerForm($formData, $files) {
     $errors = [];
 
     $name = trim($formData ['userName']);
@@ -10,7 +11,9 @@ function validateRegistrerForm($formData) {
     $username = trim($formData ['username']);
     $password = trim($formData['userPassword']);
     $repeatPassword = trim($formData['userRepeatPassword']);
-    $country = trim($formData['userCountry']);
+	$country = trim($formData['userCountry']);
+	$avatar = $files['userAvatar'];
+
 // validacion de nombre
     if (empty($name)) {
         $errors['fullName'] = 'Escribe tu nombre completo';
@@ -43,7 +46,16 @@ function validateRegistrerForm($formData) {
 // validacion de pais
     if ( empty($country) ) {
                 $errors['country'] = 'Selecciona un país';
-            }
+			}
+// validacion de avatar
+	if ( $avatar['error'] !== UPLOAD_ERR_OK ) {
+			$errors['image'] = 'Debes de subir una imagen';
+		} else {
+			$ext = pathinfo($avatar['name'], PATHINFO_EXTENSION);
+			if ( !in_array($ext, ALLOWED_IMAGE_TYPES) ) {
+				$errors['image'] = 'Formato de imagen no valido';
+			}
+		}
     return $errors;
 }
 function validateLoginForm($formData) {
@@ -71,7 +83,7 @@ function validateLoginForm($formData) {
 			'username' => $data['username'],
 			'password' => password_hash($data['userPassword'], PASSWORD_DEFAULT),
 			'country' => $data['userCountry'],
-			// 'avatar' => $data['avatar'],
+			 'avatar' => $data['avatar'],
 		];
 
 		return $user;
@@ -153,4 +165,21 @@ function validateLoginForm($formData) {
 
 		return false;
 	}
+
+	// Función para subir la imagen
+	function saveImage($image) {
+		$imgName = $image['name'];
+		$ext = pathinfo($imgName, PATHINFO_EXTENSION);
+
+		$theOriginalFile = $image['tmp_name'];
+
+		$finalName = uniqid('user_img_') .  '.' . $ext;
+
+		$theFinalFile = USER_IMAGE_PATH . $finalName;
+
+		move_uploaded_file($theOriginalFile, $theFinalFile);
+
+		return $finalName;
+	}
+
 ?>

@@ -24,10 +24,10 @@
 	$errors = [];
 
 	if ($_POST) {
-		$errors = validateRegistrerForm($_POST);
+		$errors = validateRegistrerForm($_POST, $_FILES);
 		if ( count($errors) == 0 ) {
-
-			
+			$imageName = saveImage($_FILES['userAvatar']);
+			$_POST['avatar'] = $imageName;
 			$user = saveUser($_POST);
 
 		}
@@ -118,9 +118,13 @@
 							<div class="form-group bg-dark rounded text-center">
 								<label>Imagen de perfil</label>
 								<div class="custom-file">
-									<input type="file" class="custom-file-input" name="userAvatar">
+									<input type="file" class="custom-file-input <?= isset($errors['image']) ? 'is-invalid' : ''; ?>" name="userAvatar">
 									<label class="custom-file-label">Selecciona una imagen</label>
-									
+									<?php if (isset($errors['image'])): ?>
+										<div class="alert alert-danger">
+											<?= $errors['image'] ?>
+										</div>
+									<?php endif; ?>
 								</div>
 							</div>
 						<div class="form-group">
