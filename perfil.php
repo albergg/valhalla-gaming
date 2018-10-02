@@ -1,3 +1,4 @@
+<?php require_once 'registrer-controls.php';?>
 <?php $tituloPagina = 'Perfil | Valhalla Gaming'; ?>
 <?php require_once 'partials/head.php'?>
 <?php require_once 'partials/nav-bar.php'?>

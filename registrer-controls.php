@@ -1,6 +1,14 @@
 <?php 
 require_once 'config.php';
 
+session_start();
+
+if ( isset($_COOKIE['userLogged'] ) ) {
+		$user = fetchByEmail($_COOKIE['userLogged']);
+		unset($user['id']);
+		unset($user['password']);
+		$_SESSION['user'] = $user;
+	}
 // funciones de validacion de formularios
 
 function validateRegistrerForm($formData, $files) {
@@ -67,10 +75,17 @@ function validateLoginForm($formData) {
      if ( empty($email) ) {
 			$errors['email'] = 'Escribe tu correo electrónico';
         } else if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ){
-            $errors['email'] = 'Escribe un correo válido';
+            $errors['email'] = 'Escribe un correo electronico válido';
     }
     if ( empty($password) ) {
 			$errors['password'] = 'La contraseña no puede estar vacía';
+		}elseif( !fetchByEmail($email) ) {
+			$errors['email'] = 'Email no existe';
+		} else {
+			$user = fetchByEmail($email);
+			if ( !password_verify($password, $user['password']) ) {
+				$errors['password'] = 'Contraseña incorrecta';
+			}
 		}
     return $errors;
 }
@@ -99,7 +114,7 @@ function validateLoginForm($formData) {
 		return $finalUser;
     }
     
-    // Función traer todos los Usuarios
+// Función traer todos los Usuarios
 	function fetchAll() {
 		$allUsersString = file_get_contents('data/users.json');
 
@@ -115,7 +130,7 @@ function validateLoginForm($formData) {
 		return $finalUsersArray;
     }
     
-    // Función Generar ID
+// Función Generar ID
 	function getNextId(){
 		$allUsers = fetchAll();
 
@@ -128,7 +143,7 @@ function validateLoginForm($formData) {
 		return $lastUser['id'] + 1;
 	}
 	
-	// función traer al usuario por email
+// función traer al usuario por email
 	function fetchByEmail($email) {
 		$allUsers = fetchAll();
 
@@ -141,7 +156,7 @@ function validateLoginForm($formData) {
 		return false;
 	}
 
-	// Función si existe el email
+// Función si existe el email
 	function emailExist($email) {
 		$allUsers = fetchAll();
 
@@ -153,7 +168,7 @@ function validateLoginForm($formData) {
 
 		return false;
 	}
-	// Función si existe el usuario
+// Función si existe el usuario
 	function userExist($username) {
 		$allUsers = fetchAll();
 
@@ -166,7 +181,7 @@ function validateLoginForm($formData) {
 		return false;
 	}
 
-	// Función para subir la imagen
+// Función para subir la imagen
 	function saveImage($image) {
 		$imgName = $image['name'];
 		$ext = pathinfo($imgName, PATHINFO_EXTENSION);
@@ -181,5 +196,17 @@ function validateLoginForm($formData) {
 
 		return $finalName;
 	}
+// function logear al usuario
+	function logIn($user) {
+		unset($user['id']);
+		unset($user['password']);
+		$_SESSION['user'] = $user;
+		header('location: perfil.php');
+		exit;
+	}
 
+// function está logueado
+	function isLogged() {
+		return isset($_SESSION['user']);
+	}
 ?>

@@ -1,8 +1,13 @@
-<?php require_once 'registrer-controls.php'?>
-<?php $tituloPagina = 'Registro | Valhalla Gaming'; ?>
-<?php require_once 'partials/head.php'?>
-<?php require_once 'partials/nav-bar.php'?>
-<?php 	$countries = [
+<?php require_once 'registrer-controls.php';
+if ( isLogged() ) {
+		header('location: perfil.php');
+		exit;
+	}
+	
+ $tituloPagina = 'Registro | Valhalla Gaming'; 
+ require_once 'partials/head.php';
+ require_once 'partials/nav-bar.php';
+ 	$countries = [
 		'ar' => 'Argentina',		
 		'br' => 'Brasil',
 		'co' => 'Colombia',

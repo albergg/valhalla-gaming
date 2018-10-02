@@ -1,10 +1,17 @@
-<?php require_once 'registrer-controls.php'?>
-<?php $tituloPagina = 'Login | Valhalla Gaming'; ?>
-<?php require_once 'partials/head.php'?>
-<?php require_once 'partials/nav-bar.php'?>
+ <?php 
+ require_once 'registrer-controls.php';
+
+ if ( isLogged() ) {
+		header('location: perfil.php');
+		exit;
+	}
+
+ $tituloPagina = 'Login | Valhalla Gaming';
+ require_once 'partials/head.php';
+ require_once 'partials/nav-bar.php';
 
 
-<?php 
+
   	// Persitencia de datos //
 	$userEmailLogin = isset($_POST['userEmailLogin']) ? trim($_POST['userEmailLogin']) : '';
 	$userPasswordLogin = isset($_POST['userPasswordLogin']) ? trim($_POST['userPasswordLogin']) : '';
@@ -13,6 +20,16 @@
 
 	if ($_POST) {
 		$errors = validateLoginForm($_POST);
+
+		if ( count($errors) == 0) {
+			$user = fetchByEmail($_POST['userEmail']);
+
+			if( isset($_POST['rememberUser']) ) {
+				setcookie('userLogged', $_POST['userEmailLogin'], time() + 3600);
+			}
+
+			logIn($user);
+		}
     }
     
     		echo 
@@ -67,6 +84,15 @@
 								</div>
             <!-- <a class="btn btn btn-dark miBoton " href="perfil.php" role="button">Ingresa al Valhalla!</a> -->
 						<!-- <button type="submit" class="btn btn-dark miBoton ">Ingresa al Valhalla!</button> -->
+						<div class="row justify-content-center">
+						<div class="col-md-6">
+							<div class="form-check bg-dark rounded text-center">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" name="rememberUser">
+									Recordarme
+							  </label>
+							</div>
+							<br>
 								<section class="row">
 								<button type="submit" class="btn btn-dark miBoton mx-auto">Ingresa al Valhalla!</button>   
 								</section>
