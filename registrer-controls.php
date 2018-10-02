@@ -20,13 +20,17 @@ function validateRegistrerForm($formData) {
 			$errors['email'] = 'Escribe tu correo electrónico';
         } else if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ){
             $errors['email'] = 'Escribe un correo válido';
-    }
+    }else if (emailExist($email) ) {
+			$errors['email'] = 'Ese email ya fue registrado';
+		}
 
 // validacion de nombre de usuario
     if (empty($username)) {
         $errors['username'] = 'El nombre de usuario no puede estar vacio';
     }elseif ( strlen($username) <6 ) {
 			$errors['username'] = 'El usuario debe de contener minimo 6 caracteres';
+		}else if (userExist($username) ) {
+			$errors['username'] = 'Ese usuario ya fue registrado';
 		}
 // validacion de passwords
     if ( empty($password) || empty($repeatPassword) ) {
@@ -64,6 +68,7 @@ function validateLoginForm($formData) {
 			'id' => getNextId(),
 			'name' => $data['userName'],
 			'email' => $data['userEmail'],
+			'username' => $data['username'],
 			'password' => password_hash($data['userPassword'], PASSWORD_DEFAULT),
 			'country' => $data['userCountry'],
 			// 'avatar' => $data['avatar'],
@@ -118,6 +123,31 @@ function validateLoginForm($formData) {
 		foreach ($allUsers as $oneUser) {
 			if ($oneUser['email'] === $email) {
 				return $oneUser;
+			}
+		}
+
+		return false;
+	}
+
+	// Función si existe el email
+	function emailExist($email) {
+		$allUsers = fetchAll();
+
+		foreach ($allUsers as $oneUser) {
+			if ($email == $oneUser['email']) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+	// Función si existe el usuario
+	function userExist($username) {
+		$allUsers = fetchAll();
+
+		foreach ($allUsers as $oneUser) {
+			if ($username == $oneUser['username']) {
+				return true;
 			}
 		}
 
