@@ -36,10 +36,15 @@
 							<form method="post" enctype="multipart/form-data">
 								<div class="form-group bg-dark rounded text-center ">
                                     <label>Correo Electronico</label>
-									<input type="email" class="form-control text-center" name="userEmailLogin" placeholder="Ingrese su email" <?= isset($errors['userEmailLogin']) ? 'is-invalid' : ''; ?>value="<?= $userEmailLogin; ?>">
-									<?php if (isset($errors['userEmailLogin'])): ?>
+									<input 
+										type="email" 
+										class="form-control text-center <?= isset($errors['email']) ? 'is-invalid' : ''; ?>" 
+										value="<?= $userEmailLogin; ?>"
+										name="userEmailLogin" 
+										placeholder="Ingrese su email">
+									<?php if (isset($errors['email'])): ?>
 									<div class="alert alert-danger">
-										<?= $errors['userEmailLogin'] ?>
+										<?= $errors['email'] ?>
 									</div>
 								<?php endif; ?>
 								</div>
@@ -49,7 +54,11 @@
 						<div class="col-md-8">
                 <div class="form-group bg-dark rounded text-center ">
 										<label>Contraseña</label>
-										<input type="password" name="userPasswordLogin" class="form-control text-center <?= isset($errors['password']) ? 'is-invalid' : ''; ?>" placeholder="Ingrese la contraseña" >
+										<input 
+											type="password" 
+											name="userPasswordLogin" 
+											class="form-control text-center <?= isset($errors['password']) ? 'is-invalid' : ''; ?>" 
+											placeholder="Ingrese la contraseña" >
 										<?php if (isset($errors['password'])): ?>
 									<div class="alert alert-danger">
 										<?= $errors['password'] ?>
@@ -58,9 +67,9 @@
 								</div>
             <!-- <a class="btn btn btn-dark miBoton " href="perfil.php" role="button">Ingresa al Valhalla!</a> -->
 						<!-- <button type="submit" class="btn btn-dark miBoton ">Ingresa al Valhalla!</button> -->
-                        <section class="row">
-                        <button type="submit" class="btn btn-dark miBoton mx-auto">Ingresa al Valhalla!</button>   
-                        </section>
+								<section class="row">
+								<button type="submit" class="btn btn-dark miBoton mx-auto">Ingresa al Valhalla!</button>   
+								</section>
 					</form>
 				</div>
 			</div>

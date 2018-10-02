@@ -58,7 +58,13 @@
 								</div>
 								<div class="form-group bg-dark rounded text-center ">
 									<label>Correo Electronico</label>
-									<input type="email" class="form-control text-center" name="userEmail" placeholder="Ingrese su email" <?= isset($errors['email']) ? 'is-invalid' : ''; ?>value="<?= $userEmail; ?>">
+									<input 
+										type="email" 
+										class="form-control text-center <?= isset($errors['email']) ? 'is-invalid' : ''; ?>" 
+										name="userEmail" 
+										placeholder="Ingrese su email" 
+										
+										value="<?= $userEmail; ?>">
 									<?php if (isset($errors['email'])): ?>
 									<div class="alert alert-danger">
 										<?= $errors['email'] ?>
