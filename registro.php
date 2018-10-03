@@ -39,11 +39,6 @@ if ( isLogged() ) {
 		
 	}
 
-
-	//debug
-		echo 
-		var_dump($userFullName . "<br>" . $userEmail . "<br>". $userNameLogin . "<br>". $userCountry);
-		var_dump($errors);
 ?>
 		
 

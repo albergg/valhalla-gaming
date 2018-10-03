@@ -32,9 +32,6 @@
 		}
     }
     
-    		echo 
-		var_dump($userEmailLogin . "<br>" . $userPasswordLogin . "<br>");
-		var_dump($errors);
 	?>
 
 <!-- Modal iniciar sesion-->
